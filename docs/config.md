@@ -181,6 +181,8 @@ does (e.g, `"1d2h4m40.01s"`).
         - [`Pinning.RemoteServices.API`](#pinningremoteservices-api)
           - [`Pinning.RemoteServices.API.Endpoint`](#pinningremoteservices-apiendpoint)
           - [`Pinning.RemoteServices.API.Key`](#pinningremoteservices-apikey)
+        - [`Pinning.RemoteServices.Policies`](#pinningremoteservices-policies)
+          - [`Pinning.RemoteServices.Policies.MFS`](#pinningremoteservices-policiesmfs)
 - [`Pubsub`](#pubsub)
     - [`Pubsub.Router`](#pubsubrouter)
     - [`Pubsub.DisableSigning`](#pubsubdisablesigning)
@@ -728,7 +730,7 @@ Below is a list of the most common public gateway setups.
 
 * Public [DNSLink](https://dnslink.io/) gateway resolving every hostname passed in `Host` header.
   ```console
-  $ ipfs config --json Gateway.NoDNSLink true
+  $ ipfs config --json Gateway.NoDNSLink false
   ```
   * Note that `NoDNSLink: false` is the default (it works out of the box unless set to `true` manually)
 
@@ -847,7 +849,7 @@ Example:
         "API" : {
           "Endpoint" : "https://pinningservice.tld:1234/my/api/path",
           "Key" : "someOpaqueKey"
-        }
+				}
       }
     }
   }
@@ -867,6 +869,44 @@ Type: `string`
 The key through which access to the pinning service is granted
 
 Type: `string`
+
+#### `Pinning.RemoteServices: Policies`
+
+Contains additional opt-in policies for the remote pinning service.
+
+##### `Pinning.RemoteServices: Policies.MFS`
+
+When this policy is enabled, it follows changes to MFS
+and updates the pin for MFS root on the configured remote service.
+
+A pin request to the remote service is sent only when MFS root CID has changed
+and enough time has passed since the previous request (determined by `RepinInterval`).
+
+###### `Pinning.RemoteServices: Policies.MFS.Enabled`
+
+Controls if this policy is active.
+
+Default: `false`
+
+Type: `bool`
+
+###### `Pinning.RemoteServices: Policies.MFS.PinName`
+
+Optional name to use for a remote pin that represents the MFS root CID.  
+When left empty, a default name will be generated.
+
+Default: `"policy/{PeerID}/mfs"`, e.g. `"policy/12.../mfs"`
+
+Type: `string`
+
+###### `Pinning.RemoteServices: Policies.MFS.RepinInterval`
+
+Defines how often (at most) the pin request should be sent to the remote service.  
+If left empty, the default interval will be used. Values lower than `1m` will be ignored.
+
+Default: `"5m"`
+
+Type: `duration`
 
 ## `Pubsub`
 
