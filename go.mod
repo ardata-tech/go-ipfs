@@ -44,16 +44,16 @@ require (
 	github.com/ipfs/go-ipld-git v0.0.4
 	github.com/ipfs/go-ipns v0.1.2
 	github.com/ipfs/go-log v1.0.5
-	github.com/ipfs/go-merkledag v0.3.2
+	github.com/ipfs/go-merkledag v0.4.0
 	github.com/ipfs/go-metrics-interface v0.0.1
 	github.com/ipfs/go-metrics-prometheus v0.0.2
 	github.com/ipfs/go-mfs v0.1.2
 	github.com/ipfs/go-namesys v0.3.0
-	github.com/ipfs/go-path v0.0.9
+	github.com/ipfs/go-path v0.1.0
 	github.com/ipfs/go-pinning-service-http-client v0.1.0
 	github.com/ipfs/go-unixfs v0.2.6
 	github.com/ipfs/go-verifcid v0.0.1
-	github.com/ipfs/interface-go-ipfs-core v0.4.0
+	github.com/ipfs/interface-go-ipfs-core v0.5.0
 	github.com/ipfs/tar-utils v0.0.1
 	github.com/ipld/go-car v0.3.1
 	github.com/jbenet/go-random v0.0.0-20190219211222-123a90aedc0c
@@ -70,9 +70,9 @@ require (
 	github.com/libp2p/go-libp2p-kbucket v0.4.7
 	github.com/libp2p/go-libp2p-loggables v0.1.0
 	github.com/libp2p/go-libp2p-mplex v0.4.1
+	github.com/libp2p/go-libp2p-noise v0.2.2
 	github.com/libp2p/go-libp2p-peerstore v0.2.8
 	github.com/libp2p/go-libp2p-pubsub v0.5.4
-	github.com/libp2p/go-libp2p-noise v0.2.2
 	github.com/libp2p/go-libp2p-pubsub-router v0.4.0
 	github.com/libp2p/go-libp2p-quic-transport v0.11.2
 	github.com/libp2p/go-libp2p-record v0.1.3
@@ -84,7 +84,6 @@ require (
 	github.com/libp2p/go-socket-activation v0.0.2
 	github.com/libp2p/go-tcp-transport v0.2.7
 	github.com/libp2p/go-ws-transport v0.5.0
-	github.com/libp2p/go-tcp-transport v0.2.7
 	github.com/lucas-clemente/quic-go v0.22.0
 	github.com/miekg/dns v1.1.43
 	github.com/mitchellh/go-homedir v1.1.0
