@@ -81,7 +81,7 @@ require (
 	github.com/libp2p/go-libp2p-testing v0.4.2
 	github.com/libp2p/go-libp2p-tls v0.3.0
 	github.com/libp2p/go-libp2p-yamux v0.5.4
-	github.com/libp2p/go-socket-activation v0.0.2
+	github.com/libp2p/go-socket-activation v0.1.0
 	github.com/libp2p/go-tcp-transport v0.2.7
 	github.com/libp2p/go-ws-transport v0.5.0
 	github.com/lucas-clemente/quic-go v0.23.0
